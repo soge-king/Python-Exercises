@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar  6 19:27:24 2024
 
-@author: User
-"""
 
 from tkinter import *
 import math as m
