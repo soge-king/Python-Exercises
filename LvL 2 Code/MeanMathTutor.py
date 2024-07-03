@@ -57,21 +57,24 @@ if __name__ == "__main__":
             if result is not None:
                 attempts = 0
                 while True:
-                    answer = int(input(f"Enter your answer: "))
-                    if answer == result:
-                        if attempts == 0:
-                            print(pg.sassy(5))
-                        else:
-                            print(pg.sassy(4))
-                        break
-                    else:
-                        attempts += 1
-                        if attempts <= 3:
-                            print(pg.sassy(attempts) + f"What is the answer to {probstring}")
-                        else:
-                            print(pg.sassy(7) + f" {result}")
+                    try:
+                        answer = int(input(f"Enter your answer to {probstring}: "))
+                        if answer == result:
+                            if attempts == 0:
+                                print(pg.sassy(5))
+                            else:
+                                print(pg.sassy(4))
                             break
-                
+                        else:
+                            attempts += 1
+                            if attempts <= 3:
+                                print(pg.sassy(attempts))
+                            else:
+                                print(pg.sassy(7) + f" {result}")
+                                break
+                    except ValueError:
+                        print("Invalid input, please enter an integer.")
+
                 another = input("Do you want to solve another problem? (yes/no): ").strip().lower()
                 if another != 'yes':
                     print("Thank you for practicing! Goodbye!")
