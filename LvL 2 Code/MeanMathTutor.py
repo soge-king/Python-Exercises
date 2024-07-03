@@ -57,7 +57,7 @@ if __name__ == "__main__":
             if result is not None:
                 attempts = 0
                 while True:
-                    answer = int(input(f"Enter your answer to {probstring}: "))
+                    answer = int(input(f"Enter your answer: "))
                     if answer == result:
                         if attempts == 0:
                             print(pg.sassy(5))
@@ -67,7 +67,7 @@ if __name__ == "__main__":
                     else:
                         attempts += 1
                         if attempts <= 3:
-                            print(pg.sassy(attempts))
+                            print(pg.sassy(attempts) + f"What is the answer to {probstring}")
                         else:
                             print(pg.sassy(7) + f" {result}")
                             break
